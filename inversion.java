@@ -5,7 +5,7 @@ public class inversion {
     public static void main(String args[]) {
         // A[0 .. n-1] = arr
         if (args.length < 1 || args.length > 3) {
-            System.out.println("Usage: java inversion <speed> <List of numbers as string> <Optional: Length of list>");
+            System.out.println("Usage: java inversion <speed> <List of numbers as string like '1,2,3,4,5,6' for example> <Optional: Length of list if its more than 8>");
             return;
         }
         
