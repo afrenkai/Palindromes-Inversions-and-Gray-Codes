@@ -24,7 +24,7 @@ public class palindromecheck {
         else {
             String word = args[0];
             word = word.toLowerCase();
-            word = word.replaceAll(" ", "");
+            word = word.replaceAll("[\\W]", "");
             boolean isPalindrome = isPalindrome(word);
             System.out.println(isPalindrome);
 
