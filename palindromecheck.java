@@ -1,8 +1,6 @@
 public class palindromecheck {
 
-    String [] punct = {
-            ".", ",", ";", "?", "/", "!", ":", "'", "...", "(", ")", "-"};
-    // need to figure out how to add quotation marks to punct
+    // using \\W for only words regex
     public static boolean isPalindrome(String s, int i, int j) {
         if (i >= j) {
             return true;
