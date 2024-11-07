@@ -35,7 +35,7 @@ public class inversion {
                 intArr[i] = Character.getNumericValue(argidx.charAt(i));
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input: " + argidx.charAt(i));
-                intArr[i] = 0; // default to 0 if input is not a valid integer
+                intArr[i] = 0; //imagine if we had a char in the index might be a bit of a problem. 
             }
         }
         return intArr;
@@ -47,7 +47,7 @@ class easyinversioncount {
         int invCount = 0;
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) { // Fixing the loop here to start j from i+1
+            for (int j = i + 1; j < n; j++) { // lol forgot to move 1 step up
                 if (arr[i] > arr[j]) {
                     invCount++;
                 }
@@ -78,18 +78,16 @@ class fastinversioncount {
         int[] rightArray = Arrays.copyOfRange(arr, mid + 1, right + 1);
 
         int i = 0, j = 0, k = left, swaps = 0;
-
-        // Merging and counting inversions
         while (i < leftArray.length && j < rightArray.length) {
             if (leftArray[i] <= rightArray[j]) {
                 arr[k++] = leftArray[i++];
             } else {
                 arr[k++] = rightArray[j++];
-                swaps += (mid + 1) - (left + i); // Count inversions
+                swaps += (mid + 1) - (left + i); // Count invs
             }
         }
 
-        // Copy remaining elements
+        // leftovers just dropped
         while (i < leftArray.length)
             arr[k++] = leftArray[i++];
         while (j < rightArray.length)
