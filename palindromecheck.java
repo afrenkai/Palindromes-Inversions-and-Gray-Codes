@@ -1,6 +1,6 @@
 public class palindromecheck {
 
-    string[] punct = {
+    String [] punct = {
             ".", ",", ";", "?", "/", "!", ":", "'", "...", "(", ")", "-"};
     // need to figure out how to add quotation marks to punct
     public static boolean isPalindrome(String s, int i, int j) {
@@ -11,7 +11,7 @@ public class palindromecheck {
             return false;
         }
 
-        return isPalindrome(i+1, j-1, A);
+        return isPalindrome(s, i+1, j-1);
     }
     public static boolean isPalindrome(String s) {
         return isPalindrome(s, 0, s.length()-1);
